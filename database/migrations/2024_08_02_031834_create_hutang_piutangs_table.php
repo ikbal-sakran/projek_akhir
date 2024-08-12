@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('hutang_piutangs', function (Blueprint $table) {
             $table->id();
-            $table->date('jatuh_tempo');
-            $table->string('pihak_kedua');
-            $table->integer('nominal');
-            $table->enum('status',['belum_dibayar','sudah_dibayar']);
+            $table->string('nama_event');
+            $table->date('jatuh_tempo_hutang_piutang');
+            $table->string('pihak_kedua_hutang_piutang');
+            $table->bigInteger('nominal_hutang_piutang');
+            $table->enum('status_hutang_piutang',['belum_dibayar','sudah_dibayar']);
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hutang_piutangs');
+        Schema::dropIfExists('hutang_piutang');
     }
 };
