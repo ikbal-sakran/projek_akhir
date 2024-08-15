@@ -15,6 +15,7 @@ class TransaksiController extends Controller
             'jenis_transaksi' => 'required',
             'keterangan' => 'required',
             'metode_pembayaran' => 'required',
+            'id_event'=>'required'
 
         ]);
 
@@ -23,6 +24,7 @@ class TransaksiController extends Controller
             "jenis_transaksi" => $validateData['jenis_transaksi'],
             "keterangan" => $validateData['keterangan'],
             "metode_pembayaran" => $validateData['metode_pembayaran'],
+            "id_event" => $validateData['id_event'],
         ]);
 
         return response()->json(['message' => 'Transaction create successfully'], 201);
@@ -55,6 +57,7 @@ class TransaksiController extends Controller
             'jenis_transaksi' => 'sometimes|required|in:pemasukan,pengeluaran',
             'keterangan' => 'required|string',
             'metode_pembayaran' => 'sometimes|required|in:via_dana,antar_bank',
+            'id_event' => 'required|string',
         ]);
 
         $transaksi = Transaksi::find($id);

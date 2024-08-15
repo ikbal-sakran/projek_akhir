@@ -16,5 +16,6 @@ class Transaksi extends Model
         'jenis_transaksi',
         'keterangan',
         'metode_pembayaran',
+        'id_event'
     ];
 }

@@ -17,8 +17,11 @@ return new class extends Migration
             $table->enum('jenis_transaksi',['pemasukan','pengeluaran']);
             $table->string('keterangan');
             $table->enum('metode_pembayaran',['via_dana','antar_bank']);
+            $table->unsignedBigInteger('id_event'); // Menambahkan kolom id_event
+            $table->foreign('id_event')->references('id')->on('events')->onDelete('cascade'); // Mendefinisikan foreign key
             $table->timestamps();
         });
+
     }
 
     /**

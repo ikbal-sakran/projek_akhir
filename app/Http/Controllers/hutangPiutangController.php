@@ -17,6 +17,7 @@ class HutangPiutangController extends Controller
             "nominal_hutang_piutang" => "required",
             "status_hutang_piutang" => "required",
             "pihak_kedua_hutang_piutang" => "required",
+            "id_event" =>"required"
           
         ]);
 
@@ -26,6 +27,7 @@ class HutangPiutangController extends Controller
             "pihak_kedua_hutang_piutang" => $validateData['pihak_kedua_hutang_piutang'],
             "nominal_hutang_piutang" => $validateData['nominal_hutang_piutang'],
             "status_hutang_piutang" => $validateData['status_hutang_piutang'],
+            "id_event" => $validateData['id_event']
           
         ]);
 
@@ -58,6 +60,7 @@ public function getHutangpiutangs($id)
         "nominal_hutang_piutang" => "required",
         "status_hutang_piutang" => "required",
         "pihak_kedua_hutang_piutang" => "required",
+         "id_event" =>"required"
      ]);
 
      $HutangPiutangs = Hutang_Piutang::find($id);

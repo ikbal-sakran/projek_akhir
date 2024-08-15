@@ -15,7 +15,8 @@ class hutang_piutang extends Model
         'jatuh_tempo_hutang_piutang',
         'pihak_kedua_hutang_piutang',
         'nominal_hutang_piutang',
-        'status_hutang_piutang'];
+        'status_hutang_piutang',
+        'id_event'];
 
 
 }

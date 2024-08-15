@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('pihak_kedua_hutang_piutang');
             $table->bigInteger('nominal_hutang_piutang');
             $table->enum('status_hutang_piutang',['belum_dibayar','sudah_dibayar']);
+            $table->unsignedBigInteger('id_event'); // Menambahkan kolom id_event
+            $table->foreign('id_event')->references('id')->on('events')->onDelete('cascade'); // Mendefinisikan foreign key
             $table->timestamps();
         });
     }
